@@ -202,14 +202,12 @@ export const NtosRobotactContent = (props) => {
                         onClick={() => act('toggleSensors')}
                       />
                     </LabeledList.Item>
-                    {/* NOVA EDIT ADDITION START */}
-                    <LabeledList.Item label="Camera Status">
+                    <LabeledList.Item label="Change Voice">
                       <Button
-                        content={wireCamera}
-                        onClick={() => act('cameraToggle')}
+                        content="SELECT"
+                        onClick={() => act('changeVoice')}
                       />
                     </LabeledList.Item>
-                    {/* NOVA EDIT ADDITION END */}
                     <LabeledList.Item
                       label={'Stored Photos (' + printerPictures + ')'}
                     >
