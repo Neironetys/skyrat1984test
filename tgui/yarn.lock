@@ -2027,9 +2027,70 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node-forge@npm:^1.3.0":
-  version: 1.3.11
-  resolution: "@types/node-forge@npm:1.3.11"
+"@types/marked@npm:4.3.2":
+  version: 4.3.2
+  resolution: "@types/marked@npm:4.3.2"
+  checksum: 10c0/6f44d28da5c940a719d6c6aca41e33f49c5fe957f7972939cc1cbb47d045951f4d969f382d655345d0463e47db1994635d2862018716fcef2fa85ceeceb116e7
+  languageName: node
+  linkType: hard
+
+"@types/minimatch@npm:*":
+  version: 5.1.2
+  resolution: "@types/minimatch@npm:5.1.2"
+  checksum: 10c0/83cf1c11748891b714e129de0585af4c55dd4c2cafb1f1d5233d79246e5e1e19d1b5ad9e8db449667b3ffa2b6c80125c429dbee1054e9efb45758dbc4e118562
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:*, @types/node@npm:^20.12.3":
+  version: 20.12.3
+  resolution: "@types/node@npm:20.12.3"
+  dependencies:
+    undici-types: "npm:~5.26.4"
+  checksum: 10c0/45c8485a0e55276b42c26ba1df6c480e4e1a3a3abbf4ea0ff6b4e2823c4f77e32b7e166d4263d464f207cfea5bd4de8879b8df2c7132a727b0346a30191d6bea
+  languageName: node
+  linkType: hard
+
+"@types/normalize-package-data@npm:^2.4.0":
+  version: 2.4.4
+  resolution: "@types/normalize-package-data@npm:2.4.4"
+  checksum: 10c0/aef7bb9b015883d6f4119c423dd28c4bdc17b0e8a0ccf112c78b4fe0e91fbc4af7c6204b04bba0e199a57d2f3fbbd5b4a14bf8739bf9d2a39b2a0aad545e0f86
+  languageName: node
+  linkType: hard
+
+"@types/parse-json@npm:^4.0.0":
+  version: 4.0.2
+  resolution: "@types/parse-json@npm:4.0.2"
+  checksum: 10c0/b1b863ac34a2c2172fbe0807a1ec4d5cb684e48d422d15ec95980b81475fac4fdb3768a8b13eef39130203a7c04340fc167bae057c7ebcafd7dec9fe6c36aeb1
+  languageName: node
+  linkType: hard
+
+"@types/prettier@npm:^2.0.0":
+  version: 2.7.3
+  resolution: "@types/prettier@npm:2.7.3"
+  checksum: 10c0/0960b5c1115bb25e979009d0b44c42cf3d792accf24085e4bfce15aef5794ea042e04e70c2139a2c3387f781f18c89b5706f000ddb089e9a4a2ccb7536a2c5f0
+  languageName: node
+  linkType: hard
+
+"@types/prop-types@npm:*":
+  version: 15.7.12
+  resolution: "@types/prop-types@npm:15.7.12"
+  checksum: 10c0/1babcc7db6a1177779f8fde0ccc78d64d459906e6ef69a4ed4dd6339c920c2e05b074ee5a92120fe4e9d9f1a01c952f843ebd550bee2332fc2ef81d1706878f8
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^18.2.74":
+  version: 18.2.74
+  resolution: "@types/react@npm:18.2.74"
+  dependencies:
+    "@types/prop-types": "npm:*"
+    csstype: "npm:^3.0.2"
+  checksum: 10c0/347e38b4c5dc20d50ff71bf04b7caaef490e5ff695e74a0088a13fbb2a0c5d125a5ecfd142adfa30f0176da0e2734942c91ba61d95ce269c43b3265bd7379361
+  languageName: node
+  linkType: hard
+
+"@types/resolve@npm:0.0.8":
+  version: 0.0.8
+  resolution: "@types/resolve@npm:0.0.8"
   dependencies:
     "@types/node": "npm:*"
   checksum: 10c0/3d7d23ca0ba38ac0cf74028393bd70f31169ab9aba43f21deb787840170d307d662644bac07287495effe2812ddd7ac8a14dbd43f16c2936bbb06312e96fc3b9
