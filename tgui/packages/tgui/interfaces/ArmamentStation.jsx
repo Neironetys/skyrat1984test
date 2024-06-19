@@ -1,4 +1,5 @@
-// THIS IS A NOVA SECTOR UI FILE
+// THIS IS A SKYRAT UI FILE
+import { useBackend, useLocalState } from '../backend';
 import {
   Box,
   Button,
@@ -20,7 +21,7 @@ export const ArmamentStation = (props) => {
   return (
     <Window theme="armament" title="Armament Station" width={1000} height={600}>
       <Window.Content>
-        <Section height="100%" title="Armaments Station">
+        <Section grow height="100%" title="Armaments Station">
           {card_inserted ? (
             <Stack>
               <Stack.Item grow fill>
@@ -96,8 +97,8 @@ export const ArmamentStation = (props) => {
                                 <img
                                   src={`data:image/jpeg;base64,${item.icon}`}
                                   style={{
-                                    'vertical-align': 'middle',
-                                    'horizontal-align': 'middle',
+                                    verticalAlign: 'middle',
+                                    textAlign: 'center',
                                   }}
                                 />
                                 &nbsp;{item.name}
@@ -120,15 +121,15 @@ export const ArmamentStation = (props) => {
                         item.ref === weapon && (
                           <Stack vertical key={item.ref}>
                             <Stack.Item>
-                              <Image>
-                                src=
-                                {`data:image/jpeg;base64,${item.icon}`}
-                                height={'100%'} width={'100%'} style=
-                                {{
-                                  'vertical-align': 'middle',
-                                  'horizontal-align': 'middle',
+                              <Image
+                                src={`data:image/jpeg;base64,${item.icon}`}
+                                height={'100%'}
+                                width={'100%'}
+                                style={{
+                                  verticalAlign: 'middle',
+                                  horizontalAlign: 'middle',
                                 }}
-                              </Image>
+                              />
                             </Stack.Item>
                             <Stack.Item>{item.description}</Stack.Item>
                             <Stack.Item
