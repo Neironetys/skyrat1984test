@@ -350,6 +350,26 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 				else
 					message_admins(span_danger("<B>[message_type]: </B></span><span class='notice'>Connecting player [key_name_admin(src)] has the same [matches] as [joined_player_ckey](no longer logged in)<b>[in_round]</b>. "))
 					log_admin_private("[message_type]: Connecting player [key_name(src)] has the same [matches] as [joined_player_ckey](no longer logged in)[in_round].")
+	var/reconnecting = FALSE
+	if(GLOB.player_details[ckey])
+		reconnecting = TRUE
+		player_details = GLOB.player_details[ckey]
+		var/old_version = player_details.byond_version
+		player_details.byond_version = byond_version
+		player_details.byond_build = byond_build
+
+#if MIN_COMPILER_VERSION > 516
+	#warn Fully change default relay_loc to "1,1", rather than changing it based on client version
+#endif
+		if(old_version != byond_version)
+			rebuild_plane_masters = TRUE
+
+	else
+		player_details = new(ckey)
+		player_details.byond_version = byond_version
+		player_details.byond_build = byond_build
+		GLOB.player_details[ckey] = player_details
+
 
 	. = ..() //calls mob.Login()
 

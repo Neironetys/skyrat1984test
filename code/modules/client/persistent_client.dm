@@ -1,8 +1,6 @@
 
-///assoc list of ckey -> /datum/persistent_client
-GLOBAL_LIST_EMPTY_TYPED(persistent_clients_by_ckey, /datum/persistent_client)
-/// A flat list of all persistent clients, for her looping pleasure.
-GLOBAL_LIST_EMPTY_TYPED(persistent_clients, /datum/persistent_client)
+///assoc list of ckey -> /datum/player_details
+GLOBAL_LIST_EMPTY_TYPED(player_details, /datum/player_details)
 
 /// Tracks information about a client between log in and log outs
 /datum/persistent_client
@@ -32,7 +30,10 @@ GLOBAL_LIST_EMPTY_TYPED(persistent_clients, /datum/persistent_client)
 	/// Lazylist of preference slots this client has joined the round under
 	/// Numbers are stored as strings
 	var/list/joined_as_slots
-
+	/// Major version of BYOND this client is using.
+	var/byond_version
+	/// Build number of BYOND this client is using.
+	var/byond_build
 	/// Tracks achievements they have earned
 	var/datum/achievement_data/achievements
 
@@ -69,12 +70,12 @@ GLOBAL_LIST_EMPTY_TYPED(persistent_clients, /datum/persistent_client)
 	return previous_names.Join("; ")
 
 /// Returns the full version string (i.e 515.1642) of the BYOND version and build.
-/datum/persistent_client/proc/full_byond_version()
+/datum/player_details/proc/full_byond_version()
 	if(!byond_version)
 		return "Unknown"
 	return "[byond_version].[byond_build || "xxx"]"
 
-/// Adds the new names to the player's played_names list on their /datum/persistent_client for use of admins.
+/// Adds the new names to the player's played_names list on their /datum/player_details for use of admins.
 /// `ckey` should be their ckey, and `data` should be an associative list with the keys being the names they played under and the values being the unique mob ID tied to that name.
 /proc/log_played_names(ckey, data)
 	if(!ckey)
