@@ -166,13 +166,13 @@
 	var/list/display_list = list()
 	display_list += {"<center><b>[message]</b></center><br />
 		<div style="text-align:center">
-		<a style="font-size:large;float:[( button_2 ? "left" : "right" )]" href='byond://?src=[REF(src)];button=1'>[button_1]</a>"}
+		<a style="font-size:large;float:[( Button2 ? "left" : "right" )]" href='byond://?src=[REF(src)];button=1'>[Button1]</a>"}
 
-	if (button_2)
-		display_list += {"<a style="font-size:large;[( button_3 ? "" : "float:right" )]" href='byond://?src=[REF(src)];button=2'>[button_2]</a>"}
+	if (Button2)
+		output += {"<a style="font-size:large;[( Button3 ? "" : "float:right" )]" href='byond://?src=[REF(src)];button=2'>[Button2]</a>"}
 
-	if (button_3)
-		display_list += {"<a style="font-size:large;float:right" href='byond://?src=[REF(src)];button=3'>[button_3]</a>"}
+	if (Button3)
+		output += {"<a style="font-size:large;float:right" href='byond://?src=[REF(src)];button=3'>[Button3]</a>"}
 
 	display_list += {"</div>"}
 
@@ -380,11 +380,11 @@
 		var/setting = settings["mainsettings"][name]
 		if (setting["type"] == "datum")
 			if (setting["subtypesonly"])
-				display_list += "<b>[setting["desc"]]:</b> <a href='byond://?src=[REF(src)];setting=[name];task=input;subtypesonly=1;type=datum;path=[setting["path"]]'>[setting["value"]]</a><BR>"
+				dat += "<b>[setting["desc"]]:</b> <a href='byond://?src=[REF(src)];setting=[name];task=input;subtypesonly=1;type=datum;path=[setting["path"]]'>[setting["value"]]</a><BR>"
 			else
-				display_list += "<b>[setting["desc"]]:</b> <a href='byond://?src=[REF(src)];setting=[name];task=input;type=datum;path=[setting["path"]]'>[setting["value"]]</a><BR>"
+				dat += "<b>[setting["desc"]]:</b> <a href='byond://?src=[REF(src)];setting=[name];task=input;type=datum;path=[setting["path"]]'>[setting["value"]]</a><BR>"
 		else
-			display_list += "<b>[setting["desc"]]:</b> <a href='byond://?src=[REF(src)];setting=[name];task=input;type=[setting["type"]]'>[setting["value"]]</a><BR>"
+			dat += "<b>[setting["desc"]]:</b> <a href='byond://?src=[REF(src)];setting=[name];task=input;type=[setting["type"]]'>[setting["value"]]</a><BR>"
 
 	if (preview_icon)
 		display_list += "<td valign='center'>"
@@ -397,7 +397,15 @@
 
 	return display_list.Join()
 
-/datum/browser/modal/pref_like_picker/Topic(href,href_list)
+	dat += "</tr></table>"
+
+	dat += "<hr><center><a href='byond://?src=[REF(src)];button=1'>Ok</a> "
+
+	dat += "</center>"
+
+	return dat
+
+/datum/browser/modal/preflikepicker/Topic(href,href_list)
 	if (href_list["close"] || !user || !user.client)
 		open_time = 0
 		return

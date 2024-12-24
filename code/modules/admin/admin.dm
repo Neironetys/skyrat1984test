@@ -28,12 +28,12 @@
 				dat += {"<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_remove=[text_ref(rule)]'>-> [rule.name] <-</A><br>"}
 			dat += "<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_clear=1'>(Clear Rulesets)</A><br>"
 		dat += "<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_options=1'>(Dynamic mode options)</A><br>"
-		dat += "<hr/>"
+	dat += "<hr/>"
 	if(SSticker.IsRoundInProgress())
 		dat += "<a href='byond://?src=[REF(src)];[HrefToken()];gamemode_panel=1'>(Game Mode Panel)</a><BR>"
 		dat += "<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_ruleset_manage=1'>(Manage Dynamic Rulesets)</A><br>"
-		dat += "<hr/>"
 	dat += {"
+		<BR>
 		<A href='byond://?src=[REF(src)];[HrefToken()];create_object=1'>Create Object</A><br>
 		<A href='byond://?src=[REF(src)];[HrefToken()];quick_create_object=1'>Quick Create Object</A><br>
 		<A href='byond://?src=[REF(src)];[HrefToken()];create_turf=1'>Create Turf</A><br>
@@ -128,15 +128,13 @@ ADMIN_VERB(spawn_cargo, R_SPAWN, "Spawn Cargo", "Spawn a cargo crate.", ADMIN_CA
 	browser.open()
 
 /datum/admins/proc/dynamic_ruleset_manager(mob/user)
-	var/datum/browser/browser = new(user, "dyn_mode_options", "Dynamic Ruleset Management", 900, 650)
-	var/dat = {"
-		Change these options to forcibly enable or disable dynamic rulesets.<br/>
-		Disabled rulesets will never run, even if they would otherwise be valid.<br/>
-		Enabled rulesets will run even if the qualifying minimum of threat or player count is not present, this does not guarantee that they will necessarily be chosen (for example their weight may be set to 0 in config).<br/>
-		<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_ruleset_force_all_on=1'>force enable all</A>
-		<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_ruleset_force_all_off=1'>force disable all</A>
-		<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_ruleset_force_all_reset=1'>reset all</A>
-	"}
+	var/dat = "<center><B><h2>Dynamic Ruleset Management</h2></B></center><hr>\
+		Change these options to forcibly enable or disable dynamic rulesets.<br/>\
+		Disabled rulesets will never run, even if they would otherwise be valid.<br/>\
+		Enabled rulesets will run even if the qualifying minimum of threat or player count is not present, this does not guarantee that they will necessarily be chosen (for example their weight may be set to 0 in config).<br/>\
+		\[<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_ruleset_force_all_on=1'>force enable all</A> / \
+		<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_ruleset_force_all_off=1'>force disable all</A> / \
+		<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_ruleset_force_all_reset=1'>reset all</A>\]"
 
 	if (SSticker.current_state <= GAME_STATE_PREGAME) // Don't bother displaying after the round has started
 		var/static/list/rulesets_by_context = list()
@@ -170,10 +168,10 @@ ADMIN_VERB(spawn_cargo, R_SPAWN, "Spawn Cargo", "Spawn a cargo crate.", ADMIN_CA
 				color = COLOR_GREEN
 			if (RULESET_FORCE_DISABLED)
 				color = COLOR_RED
-		dat += "<tr><td><b>[initial(rule.name)]</b></td><td>\[<font color=[color]> [forced] </font>\]</td><td> \
-			<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_ruleset_force_on=[text_ref(rule)]'>force enabled</A> \
-			<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_ruleset_force_off=[text_ref(rule)]'>force disabled</A> \
-			<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_ruleset_force_reset=[text_ref(rule)]'>reset</A></td></tr>"
+		dat += "<tr><td><b>[initial(rule.name)]</b></td><td>\[<font color=[color]>[forced]</font>\]</td><td>\[\
+			<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_ruleset_force_on=[text_ref(rule)]'>force enabled</A> /\
+			<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_ruleset_force_off=[text_ref(rule)]'>force disabled</A> /\
+			<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_ruleset_force_reset=[text_ref(rule)]'>reset</A>\]</td></tr>"
 	dat += "</table>"
 	return dat
 
@@ -201,14 +199,13 @@ ADMIN_VERB(spawn_cargo, R_SPAWN, "Spawn Cargo", "Spawn a cargo crate.", ADMIN_CA
 			explanation = " - Forcibly enabled"
 		active = active ? "Active" : "Inactive"
 
-		dat += {"<tr><td><b>[rule.name]</b></td>
-			<td>\[ Weight: [rule.weight] \]
-			<td>\[<font color=[color]> [active][explanation] </font>\]</td><td>
-			<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_ruleset_force_on=[text_ref(rule.type)]'>force enabled</A>
-			<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_ruleset_force_off=[text_ref(rule.type)]'>force disabled</A>
-			<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_ruleset_force_reset=[text_ref(rule.type)]'>reset</A></td>
-			<td><A href='byond://?src=[REF(src)];[HrefToken()];f_inspect_ruleset=[text_ref(rule)]'>VV</A></td></tr>
-		"}
+		dat += "<tr><td><b>[rule.name]</b></td>\
+			<td>\[Weight : [rule.weight]\]\
+			<td>\[<font color=[color]>[active][explanation]</font>\]</td><td>\[\
+			<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_ruleset_force_on=[text_ref(rule.type)]'>force enabled</A> /\
+			<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_ruleset_force_off=[text_ref(rule.type)]'>force disabled</A> /\
+			<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_ruleset_force_reset=[text_ref(rule.type)]'>reset</A>\]</td>\
+			<td>\[<A href='byond://?src=[REF(src)];[HrefToken()];f_inspect_ruleset=[text_ref(rule)]'>VV</A>\]</td></tr>"
 	dat += "</table>"
 	return dat
 

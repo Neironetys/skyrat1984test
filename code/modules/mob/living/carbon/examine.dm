@@ -610,10 +610,6 @@
 		. += "\[Record Missing\]"
 	. += "<a href='byond://?src=[REF(src)];hud=m;evaluation=1;examine_time=[world.time]'>\[Medical evaluation\]</a>"
 	. += "<a href='byond://?src=[REF(src)];hud=m;quirk=1;examine_time=[world.time]'>\[See quirks\]</a>"
-	//NOVA EDIT ADDITION BEGIN - EXAMINE RECORDS
-	if(target_record && length(target_record.past_medical_records) > RECORDS_INVISIBLE_THRESHOLD)
-		. += "<a href='byond://?src=[REF(src)];hud=m;medrecords=1;examine_time=[world.time]'>\[View medical records\]</a>"
-	//NOVA EDIT ADDITION END - EXAMINE RECORDS
 
 /// Collects information displayed about src when examined by a user with a security HUD.
 /mob/living/carbon/proc/get_sechud_examine_info(mob/living/user, datum/record/crew/target_record)
@@ -636,10 +632,6 @@
 		. += "<a href='byond://?src=[REF(src)];hud=s;add_citation=1;examine_time=[world.time]'>\[Add citation\]</a>\
 			<a href='byond://?src=[REF(src)];hud=s;add_crime=1;examine_time=[world.time]'>\[Add crime\]</a>\
 			<a href='byond://?src=[REF(src)];hud=s;add_note=1;examine_time=[world.time]'>\[Add note\]</a>"
-		// NOVA EDIT ADDITION BEGIN - EXAMINE RECORDS
-		if(target_record && length(target_record.past_security_records) > RECORDS_INVISIBLE_THRESHOLD)
-			. += "<a href='byond://?src=[REF(src)];hud=s;secrecords=1;examine_time=[world.time]'>\[View past security records\]</a>"
-		// NOVA EDIT ADDITION END - EXAMINE RECORDS
 
 /mob/living/carbon/human/examine_more(mob/user)
 	. = ..()

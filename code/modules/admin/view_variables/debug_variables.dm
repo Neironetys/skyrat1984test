@@ -86,7 +86,8 @@
 				items += debug_variable(key, val, level + 1, sanitize = sanitize)
 
 			return "<a href='byond://?_src_=vars;[HrefToken()];[link_vars]'>/list ([list_value.len])</a><ul>[items.Join()]</ul>"
-		return "<a href='byond://?_src_=vars;[HrefToken()];[link_vars]'>/list ([list_value.len])</a>"
+		else
+			return "<a href='byond://?_src_=vars;[HrefToken()];[link_vars]'>/list ([list_value.len])</a>"
 
 	// if it's a number, is it a bitflag?
 	var/list/valid_bitflags
