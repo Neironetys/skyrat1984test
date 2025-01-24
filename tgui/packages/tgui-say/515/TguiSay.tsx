@@ -1,15 +1,15 @@
 import './styles/main.scss';
 
-import { useEffect, useRef, useState } from 'react';
+import { Component, createRef, RefObject } from 'react';
 import { dragStartHandler } from 'tgui/drag';
 import { isEscape, KEY } from 'tgui-core/keys';
 import { BooleanLike, classes } from 'tgui-core/react';
 
-import { Channel, ChannelIterator } from './ChannelIterator';
-import { ChatHistory } from './ChatHistory';
-import { LineLength, RADIO_PREFIXES, WindowSize } from './constants';
-import { getPrefix, windowClose, windowOpen, windowSet } from './helpers';
-import { byondMessages } from './timers';
+import { Channel, ChannelIterator } from '../ChannelIterator';
+import { ChatHistory } from '../ChatHistory';
+import { byondMessages } from '../timers';
+import { LINE_LENGTHS, RADIO_PREFIXES, WINDOW_SIZES } from './constants';
+import { windowClose, windowOpen, windowSet } from './helpers';
 
 type ByondOpen = {
   channel: Channel;
@@ -266,48 +266,59 @@ export function TguiSay() {
     }
   }, [value]);
 
-  const theme =
-    (lightMode && 'lightMode') ||
-    (currentPrefix && RADIO_PREFIXES[currentPrefix]) ||
-    channelIterator.current.current();
+  setValue(value: string) {
+    const textArea = this.innerRef.current;
+    if (textArea) {
+      textArea.value = value;
+    }
+  }
+
+  render() {
+    const theme =
+      (this.lightMode && 'lightMode') ||
+      (this.currentPrefix && RADIO_PREFIXES[this.currentPrefix]) ||
+      this.channelIterator.current();
+
+    return (
+      <div
+        className={`old-window old-window-${theme} old-window-${this.state.size}`}
+      >
+        <Dragzone position="top" theme={theme} />
+        <div className="old-center">
+          <Dragzone position="left" theme={theme} />
+          <div className="old-input">
+            <button
+              className={`old-button old-button-${theme}`}
+              onClick={this.handleIncrementChannel}
+              type="button"
+            >
+              {this.state.buttonContent}
+            </button>
+            <textarea
+              className={`old-textarea old-textarea-${theme}`}
+              maxLength={this.maxLength}
+              onInput={this.handleInput}
+              onKeyDown={this.handleKeyDown}
+              ref={this.innerRef}
+            />
+          </div>
+          <Dragzone position="right" theme={theme} />
+        </div>
+        <Dragzone position="bottom" theme={theme} />
+      </div>
+    );
+  }
+}
+
+const Dragzone = ({ theme, position }: { theme: string; position: string }) => {
+  // Horizontal or vertical?
+  const location =
+    position === 'left' || position === 'right' ? 'vertical' : 'horizontal';
 
   return (
-    <>
-      <div
-        className={`window window-${theme} window-${size}`}
-        onMouseDown={dragStartHandler}
-      >
-        {!lightMode && <div className={`shine shine-${theme}`} />}
-      </div>
-      <div
-        className={classes(['content', lightMode && 'content-lightMode'])}
-        style={{
-          zoom: scale.current ? '' : `${100 / window.devicePixelRatio}%`,
-        }}
-      >
-        <button
-          className={`button button-${theme}`}
-          onMouseDown={handleButtonClick}
-          onMouseUp={handleButtonRelease}
-          type="button"
-        >
-          {buttonContent}
-        </button>
-        <textarea
-          autoCorrect="off"
-          className={classes([
-            'textarea',
-            `textarea-${theme}`,
-            value.length > LineLength.Large && 'textarea-large',
-          ])}
-          maxLength={maxLength}
-          onInput={handleInput}
-          onKeyDown={handleKeyDown}
-          ref={innerRef}
-          spellCheck={false}
-          value={value}
-        />
-      </div>
-    </>
+    <div
+      className={`old-dragzone-${location} old-dragzone-${position} old-dragzone-${theme}`}
+      onMouseDown={dragStartHandler}
+    />
   );
 }
