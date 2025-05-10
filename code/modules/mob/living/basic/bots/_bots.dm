@@ -543,10 +543,10 @@ GLOBAL_LIST_INIT(command_strings, list(
 	clear_path_hud()
 	if(bypass_ai_reset || isnull(calling_ai_ref))
 		return
-	var/mob/living/ai_caller = calling_ai_ref.resolve()
-	if(isnull(ai_caller))
+	var/mob/living/ai_summoner = calling_ai_ref.resolve()
+	if(isnull(ai_summoner))
 		return
-	to_chat(ai_caller, span_danger("Call command to a bot has been reset."))
+	to_chat(ai_summoner, span_danger("Call command to a bot has been reset."))
 	calling_ai_ref = null
 
 //PDA control. Some bots, especially MULEs, may have more parameters.
@@ -784,7 +784,7 @@ GLOBAL_LIST_INIT(command_strings, list(
 
 
 /mob/living/basic/bot/proc/summon_bot(atom/summoner, turf/turf_destination, user_access = list(), grant_all_access = FALSE)
-	if(isAI(summoner) && !set_ai_caller(summoner))
+	if(isAI(summoner) && !set_ai_summoner(summoner))
 		return FALSE
 	bot_reset(bypass_ai_reset = isAI(summoner))
 	var/turf/destination = turf_destination ? turf_destination : get_turf(summoner)
@@ -797,11 +797,11 @@ GLOBAL_LIST_INIT(command_strings, list(
 		addtimer(CALLBACK(src, PROC_REF(bot_reset)), SENTIENT_BOT_RESET_TIMER)
 	return TRUE
 
-/mob/living/basic/bot/proc/set_ai_caller(mob/living/ai_caller)
+/mob/living/basic/bot/proc/set_ai_summoner(mob/living/summoner)
 	var/atom/calling_ai = calling_ai_ref?.resolve()
 	if(!isnull(calling_ai) && calling_ai != src)
 		return FALSE
-	calling_ai_ref = WEAKREF(ai_caller)
+	calling_ai_ref = WEAKREF(summoner)
 	return TRUE
 
 /mob/living/basic/bot/proc/update_bot_mode(new_mode, update_hud = TRUE)

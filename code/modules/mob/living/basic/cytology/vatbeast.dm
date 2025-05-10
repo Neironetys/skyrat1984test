@@ -128,7 +128,7 @@
 	if (!isliving(target) || target == owner)
 		return FALSE
 
-	if (!owner.Adjacent(target))
+	if(!owner.Adjacent(target))
 		owner.balloon_alert(clicker, "too far!")
 		return FALSE
 
@@ -139,7 +139,7 @@
 
 	// Give feedback from the slap.
 	// Additional feedback for if a rider did it
-	if (clicker != owner)
+	if(clicker != owner)
 		to_chat(clicker, span_notice("You command [owner] to slap [target] with its tentacles."))
 
 	return TRUE

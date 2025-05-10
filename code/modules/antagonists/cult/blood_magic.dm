@@ -244,8 +244,8 @@
 	disable_text = span_cult("You dispel the magic...")
 
 /datum/action/innate/cult/blood_spell/horror/InterceptClickOn(mob/living/clicker, params, atom/clicked_on)
-	var/turf/caller_turf = get_turf(clicker)
-	if(!isturf(caller_turf))
+	var/turf/clicker_turf = get_turf(clicker)
+	if(!isturf(clicker_turf))
 		return FALSE
 
 	if(!ishuman(clicked_on) || get_dist(clicker, clicked_on) > 7)

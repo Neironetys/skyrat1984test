@@ -736,7 +736,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	if(!can_interact(clicker))
 		remove_control()
 		return FALSE
-	log_combat(clicker, A, "fired with manual turret control at")
+	log_combat(clicker,A,"fired with manual turret control at")
 	target(A)
 	return TRUE
 

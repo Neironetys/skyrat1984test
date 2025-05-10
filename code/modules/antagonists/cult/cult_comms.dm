@@ -386,7 +386,8 @@
 
 /datum/action/innate/cult/master/pulse/do_ability(mob/living/clicker, atom/clicked_on)
 	var/atom/throwee = throwee_ref?.resolve()
-	if(throwee && QDELING(throwee))
+
+	if(QDELETED(throwee))
 		to_chat(clicker, span_cult("You lost your target!"))
 		throwee = null
 		throwee_ref = null
@@ -430,14 +431,20 @@
 
 		return TRUE
 
-	if(isliving(clicked_on))
-		var/mob/living/living_clicked = clicked_on
-		if(!IS_CULTIST(living_clicked))
-			return FALSE
-		SEND_SOUND(clicker, sound('sound/items/weapons/thudswoosh.ogg'))
-		to_chat(clicker, span_cult_bold("You reach through the veil with your mind's eye and seize [clicked_on]! <b>Click anywhere nearby to teleport [clicked_on.p_them()]!</b>"))
-		throwee_ref = WEAKREF(clicked_on)
-		return TRUE
+	else
+		if(isliving(clicked_on))
+			var/mob/living/living_clicked = clicked_on
+			if(!IS_CULTIST(living_clicked))
+				return FALSE
+			SEND_SOUND(clicker, sound('sound/items/weapons/thudswoosh.ogg'))
+			to_chat(clicker, span_cult_bold("You reach through the veil with your mind's eye and seize [clicked_on]! <b>Click anywhere nearby to teleport [clicked_on.p_them()]!</b>"))
+			throwee_ref = WEAKREF(clicked_on)
+			return TRUE
+
+		if(istype(clicked_on, /obj/structure/destructible/cult))
+			to_chat(clicker, span_cult_bold("You reach through the veil with your mind's eye and lift [clicked_on]! <b>Click anywhere nearby to teleport it!</b>"))
+			throwee_ref = WEAKREF(clicked_on)
+			return TRUE
 
 	if(istype(clicked_on, /obj/structure/destructible/cult))
 		to_chat(clicker, span_cult_bold("You reach through the veil with your mind's eye and lift [clicked_on]! <b>Click anywhere nearby to teleport it!</b>"))
