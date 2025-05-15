@@ -259,6 +259,5 @@ tgstation.json
 /sound/tts_cache/**/*
 /sound/tts_scrambled/**/*
 
-# Ignore custom workflows
-
-/.github/workflows/remote_deploy.yml
+# Ignore preload config (should be modified on server if you know what you're doing)
+/config/config_preload.txt
