@@ -10,7 +10,7 @@
 	head = null
 	glasses = /obj/item/clothing/glasses/night
 	ears = /obj/item/radio/headset/headset_cent/alt/with_key
-	mask = /obj/item/clothing/mask/gas/hecu2
+	mask = /obj/item/clothing/mask/gas/hecu
 	uniform = /obj/item/clothing/under/costume/nri
 	suit = null
 	suit_store = null

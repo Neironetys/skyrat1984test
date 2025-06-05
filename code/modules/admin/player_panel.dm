@@ -1,5 +1,5 @@
 /datum/admins/proc/player_panel_new()//The new one
-	if(!check_rights(R_ADMIN))
+	if(!check_rights())
 		return
 	log_admin("[key_name(usr)] checked the player panel.")
 	var/dat = "<html><head><meta http-equiv='X-UA-Compatible' content='IE=edge' charset='UTF-8'/><title>Player Panel</title></head>"

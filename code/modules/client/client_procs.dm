@@ -1,3 +1,4 @@
+
 	////////////
 	//SECURITY//
 	////////////
@@ -255,7 +256,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	TopicData = null //Prevent calls to client.Topic from connect
 
 	if(connection != "seeker" && connection != "web")//Invalid connection type.
-		log_access("LOGIN ERROR: Trying to log from: [key_name(src)] from [address ? address : "localhost"]-[computer_id], CONNECTION TYPE = [connection ? connection : "null"]")
 		return null
 
 	GLOB.clients += src
@@ -351,26 +351,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 				else
 					message_admins(span_danger("<B>[message_type]: </B></span><span class='notice'>Connecting player [key_name_admin(src)] has the same [matches] as [joined_player_ckey](no longer logged in)<b>[in_round]</b>. "))
 					log_admin_private("[message_type]: Connecting player [key_name(src)] has the same [matches] as [joined_player_ckey](no longer logged in)[in_round].")
-	var/reconnecting = FALSE
-	if(GLOB.player_details[ckey])
-		reconnecting = TRUE
-		player_details = GLOB.player_details[ckey]
-		var/old_version = player_details.byond_version
-		player_details.byond_version = byond_version
-		player_details.byond_build = byond_build
-
-#if MIN_COMPILER_VERSION > 516
-	#warn Fully change default relay_loc to "1,1", rather than changing it based on client version
-#endif
-		if(old_version != byond_version)
-			rebuild_plane_masters = TRUE
-
-	else
-		player_details = new(ckey)
-		player_details.byond_version = byond_version
-		player_details.byond_build = byond_build
-		GLOB.player_details[ckey] = player_details
-
 
 	. = ..() //calls mob.Login()
 
@@ -468,8 +448,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		to_chat_immediate(src, "Your version: [byond_version].[byond_build]")
 		to_chat_immediate(src, "Required version: [breaking_version].[breaking_build] or later")
 		to_chat_immediate(src, "Visit <a href=\"https://secure.byond.com/download\">BYOND's website</a> to get the latest version of BYOND.")
-		qdel(src)
-		return
+		if (connecting_admin)
+			to_chat_immediate(src, "Because you are an admin, you are being allowed to walk past this limitation, But it is still STRONGLY suggested you upgrade")
+		else
+			qdel(src)
+			return
 	else if (byond_version < warn_version || (byond_version == warn_version && byond_build < warn_build)) //We have words for this client.
 		if(CONFIG_GET(flag/client_warn_popup))
 			var/msg = "<b>Your version of byond may be getting out of date:</b><br>"

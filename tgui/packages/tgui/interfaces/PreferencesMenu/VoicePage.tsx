@@ -1,4 +1,3 @@
-import { useBackend, useLocalState } from '../../backend';
 import {
   BlockQuote,
   Box,
@@ -9,7 +8,9 @@ import {
   LabeledList,
   Section,
   Table,
-} from '../../components';
+} from 'tgui-core/components';
+
+import { useBackend, useLocalState } from '../../backend';
 import { PreferencesMenuData } from './data';
 
 const donatorTiers = {
