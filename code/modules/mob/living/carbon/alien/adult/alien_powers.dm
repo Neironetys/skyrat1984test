@@ -294,7 +294,7 @@ Doesn't work on other aliens/AI.*/
 		span_alertalien("You spit neurotoxin."),
 	)
 	var/obj/projectile/neurotoxin/neurotoxin = new /obj/projectile/neurotoxin(clicker.loc)
-	neurotoxin.preparePixelProjectile(target, clicker, modifiers)
+	neurotoxin.aim_projectile(target, clicker, modifiers)
 	neurotoxin.firer = clicker
 	neurotoxin.fire()
 	clicker.newtonian_move(get_angle(target, clicker))
@@ -405,4 +405,3 @@ Doesn't work on other aliens/AI.*/
 /mob/living/carbon/alien/adjustPlasma(amount)
 	. = ..()
 	updatePlasmaDisplay()
-

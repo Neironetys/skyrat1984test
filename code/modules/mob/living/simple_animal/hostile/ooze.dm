@@ -381,7 +381,7 @@
 
 	var/modifiers = params2list(params)
 	var/obj/projectile/globule/globule = new(clicker.loc)
-	globule.preparePixelProjectile(target, clicker, modifiers)
+	globule.aim_projectile(target, clicker, modifiers)
 	globule.def_zone = clicker.zone_selected
 	globule.fire()
 

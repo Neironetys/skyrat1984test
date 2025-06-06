@@ -370,9 +370,31 @@
 		if(wound_desc)
 			check_list += "\t[wound_desc]"
 
-	for(var/obj/item/embedded_thing in embedded_objects)
-		var/stuck_word = embedded_thing.is_embed_harmless() ? "stuck" : "embedded"
-		check_list += "\t <a href='byond://?src=[REF(examiner)];embedded_object=[REF(embedded_thing)];embedded_limb=[REF(src)]' class='warning'>There is \a [embedded_thing] [stuck_word] in your [name]!</a>"
+	for(var/obj/item/embedded_thing as anything in embedded_objects)
+		if(embedded_thing.get_embed().stealthy_embed)
+			continue
+		var/harmless = embedded_thing.get_embed().is_harmless()
+		var/stuck_wordage = harmless ? "stuck to" : "embedded in"
+		var/embed_text = "\t<a href='byond://?src=[REF(examiner)];embedded_object=[REF(embedded_thing)];embedded_limb=[REF(src)]'> There is [icon2html(embedded_thing, examiner)] \a [embedded_thing] [stuck_wordage] your [plaintext_zone]!</a>"
+		if (harmless)
+			check_list += span_italics(span_notice(embed_text))
+		else
+			check_list += span_boldwarning(embed_text)
+
+	if(current_gauze)
+		check_list += span_notice("\tThere is some [current_gauze.name] wrapped around it.")
+	else if(can_bleed())
+		switch(get_modified_bleed_rate())
+			if(0.2 to 1)
+				check_list += span_warning("\tIt's lightly bleeding.")
+			if(1 to 2)
+				check_list += span_warning("\tIt's bleeding.")
+			if(3 to 4)
+				check_list += span_warning("\tIt's bleeding heavily!")
+			if(4 to INFINITY)
+				check_list += span_warning("\tIt's bleeding profusely!")
+
+	return jointext(check_list, "<br>")
 
 /obj/item/bodypart/blob_act()
 	receive_damage(max_damage, wound_bonus = CANT_WOUND)
