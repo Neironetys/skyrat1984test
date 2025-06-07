@@ -1,0 +1,5 @@
+author: "Arceniu"
+delete-after: True
+changes:
+  - rscadd: "Returned gas masks"
+  - bugfix: "fixed a gas mask on blackmesa"
