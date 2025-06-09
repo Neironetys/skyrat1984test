@@ -81,5 +81,10 @@
   - bugfix: armament tgui
   - balance: rebalanced cargo imports
   - config: changed modular nova config
+  - bugfix: removed one override
   DenIS318:
   - server: Fixes wiki urls for in-game books
+  - rscdel: Removed weird spotlight effect from economy
+  - server: Obsession event threat 20 -> 10
+  - qol: More details at map vote
+  - bugfix: Fixed map vote that was random before
