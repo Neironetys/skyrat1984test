@@ -79,5 +79,7 @@
 2025-06-09:
   Arceniu:
   - bugfix: armament tgui
+  - balance: rebalanced cargo imports
+  - config: changed modular nova config
   DenIS318:
   - server: Fixes wiki urls for in-game books
