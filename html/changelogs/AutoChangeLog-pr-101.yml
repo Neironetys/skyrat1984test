@@ -1,0 +1,5 @@
+author: "DenIS318"
+delete-after: True
+changes:
+  - qol: "More details at map vote"
+  - bugfix: "Fixed map vote that was random before"
