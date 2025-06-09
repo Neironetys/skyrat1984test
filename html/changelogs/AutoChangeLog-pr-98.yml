@@ -1,0 +1,4 @@
+author: "DenIS318"
+delete-after: True
+changes:
+  - server: "Fixes wiki urls for in-game books"
