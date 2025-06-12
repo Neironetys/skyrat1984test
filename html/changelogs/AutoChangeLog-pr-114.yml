@@ -1,5 +1,0 @@
-author: "Arceniu"
-delete-after: True
-changes:
-  - rscadd: "Edited oldstation"
-  - config: "added/enabled oldstation1984.dmm spawn, disabled oldstation1984.dmm spawn"
