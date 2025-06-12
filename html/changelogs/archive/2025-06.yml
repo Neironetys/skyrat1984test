@@ -97,3 +97,8 @@
 2025-06-11:
   DenIS318:
   - config: Maintenance access for everyone
+2025-06-12:
+  DenIS318:
+  - bugfix: Throw items in softcrit now works properly
+  - config: Min players for roundstart spies 10 -> 5
+  - rscdel: Remove Nova's swap servers from title screen
