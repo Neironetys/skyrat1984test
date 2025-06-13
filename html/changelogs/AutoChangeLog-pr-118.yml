@@ -1,0 +1,5 @@
+author: "DenIS318"
+delete-after: True
+changes:
+  - config: "Lavaland ruins budget 0 => 30. Now you can encounter more structures at lavaland, like hierophant arena and so on."
+  - config: "Space ruins budget 0 => 30. Now space ruins actually spawn!!!"
