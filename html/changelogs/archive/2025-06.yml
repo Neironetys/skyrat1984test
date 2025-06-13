@@ -109,3 +109,14 @@
   - image: nova logo replaced by ss1984 logo
   - image: nova logo in-chat replaced by ratge
   - image: Skyrat event title screen
+2025-06-13:
+  Arceniu:
+  - rscadd: Returned MCR
+  - code_imp: changed cargo(added mcr)
+  DenIS318:
+  - rscadd: 'Dynamic Progressive support (TESTING): now based on station strength
+      the threat for dynamic could be increased at each minute. More info at PR.'
+  - admin: Admins can disable Dynamic Progressive at Game Panel for Dynamic Options
+  - config: Lavaland ruins budget 0 => 30. Now you can encounter more structures at
+      lavaland, like hierophant arena and so on.
+  - config: Space ruins budget 0 => 30. Now space ruins actually spawn!!!

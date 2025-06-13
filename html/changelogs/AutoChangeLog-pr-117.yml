@@ -1,5 +1,0 @@
-author: "DenIS318"
-delete-after: True
-changes:
-  - rscadd: "Dynamic Progressive support (TESTING): now based on station strength the threat for dynamic could be increased at each minute. More info at PR."
-  - admin: "Admins can disable Dynamic Progressive at Game Panel for Dynamic Options"
