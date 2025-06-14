@@ -1,0 +1,4 @@
+author: "DenIS318"
+delete-after: True
+changes:
+  - rscadd: "Preference for cortical borer to allow spawn as them in midround event"
