@@ -1,7 +1,0 @@
-author: "DenIS318"
-delete-after: True
-changes:
-  - config: "Roundstart antagonists correctly spawn when roundstart players at least 5. Some rulesets also requires roundstart security/heads"
-  - config: "Generated threat at round start decreased by 24% for lowpop (below 20 players), otherwise it would be really syndicate station"
-  - config: "Paradox Clone midround event minimum players 0 => 5"
-  - config: "Some other small tweaks at dynamic rulesets values for minimum players"

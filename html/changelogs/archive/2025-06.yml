@@ -120,3 +120,14 @@
   - config: Lavaland ruins budget 0 => 30. Now you can encounter more structures at
       lavaland, like hierophant arena and so on.
   - config: Space ruins budget 0 => 30. Now space ruins actually spawn!!!
+2025-06-14:
+  DenIS318:
+  - rscadd: Preference for cortical borer to allow spawn as them in midround event
+  - bugfix: Correct sub-roles display at radio
+  - qol: Infiltrator modset now correctly hiding job at radio
+  - config: Roundstart antagonists correctly spawn when roundstart players at least
+      5. Some rulesets also requires roundstart security/heads
+  - config: Generated threat at round start decreased by 24% for lowpop (below 20
+      players), otherwise it would be really syndicate station
+  - config: Paradox Clone midround event minimum players 0 => 5
+  - config: Some other small tweaks at dynamic rulesets values for minimum players
