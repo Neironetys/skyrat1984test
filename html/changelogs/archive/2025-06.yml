@@ -131,3 +131,7 @@
       players), otherwise it would be really syndicate station
   - config: Paradox Clone midround event minimum players 0 => 5
   - config: Some other small tweaks at dynamic rulesets values for minimum players
+  - bugfix: Modify Goals UI fix for admins
+  - rscadd: Galactic Materials Market now accepts selling materials as it was before
+      Nova's disabled it
+  - config: New config flag for Galactic Market sell
