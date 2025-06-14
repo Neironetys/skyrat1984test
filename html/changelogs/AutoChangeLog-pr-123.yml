@@ -1,0 +1,5 @@
+author: "DenIS318"
+delete-after: True
+changes:
+  - bugfix: "Correct sub-roles display at radio"
+  - qol: "Infiltrator modset now correctly hiding job at radio"
