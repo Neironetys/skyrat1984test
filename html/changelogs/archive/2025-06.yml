@@ -136,3 +136,8 @@
       Nova's disabled it
   - config: New config flag for Galactic Market sell
   - spellcheck: Translated codeworks and ion laws
+2025-06-15:
+  Arceniu:
+  - qol: changed cargodise outfit
+  - qol: slighly changed desc of military autodoc refill bottle
+  - bugfix: fixed a basic autodoc refill override in cargo
