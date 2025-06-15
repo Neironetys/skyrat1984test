@@ -1,0 +1,5 @@
+author: "Arceniu"
+delete-after: True
+changes:
+  - qol: "slighly changed desc of military autodoc refill bottle"
+  - bugfix: "fixed a basic autodoc refill override in cargo"
