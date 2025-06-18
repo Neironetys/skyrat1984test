@@ -1,4 +1,0 @@
-author: "DenIS318"
-delete-after: True
-changes:
-  - server: "Aurora Caelsus event temporaly disabled from triggering automatically"

@@ -149,3 +149,6 @@
   Arceniu:
   - bugfix: fixed missing mcr in list
   - code_imp: changed comm console
+2025-06-18:
+  DenIS318:
+  - server: Aurora Caelsus event temporaly disabled from triggering automatically
