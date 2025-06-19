@@ -1,5 +1,0 @@
-author: "Arceniu"
-delete-after: True
-changes:
-  - rscadd: "Added modular DS-2 and some code"
-  - bugfix: "Fixed Tarkon deck hud / interdyne huds"

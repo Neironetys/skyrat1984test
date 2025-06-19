@@ -152,3 +152,7 @@
 2025-06-18:
   DenIS318:
   - server: Aurora Caelsus event temporaly disabled from triggering automatically
+2025-06-19:
+  Arceniu:
+  - rscadd: Added modular DS-2 and some code
+  - bugfix: Fixed Tarkon deck hud / interdyne huds
