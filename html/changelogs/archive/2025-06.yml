@@ -73,6 +73,10 @@
       policy to allow crewmates to bring stoats (rather obtained on station or through
       the intergalactic pet trade) through customs as part of their progressive Bring-Your-Pet-To-Work
       initiative.
+  Arceniu:
+  - rscadd: Returned gas masks
+  - bugfix: fixed a gas mask on blackmesa
+  - bugfix: fixed hev helmets
   OrionTheFox:
   - balance: added a 'damaged' marine MODsuit with security-grade armor, a bit less
       module complexity, and no admin/antag modules. This has replaced the admin-ERT
@@ -84,13 +88,13 @@
   sergeirocks100:
   - map: Snowglobe, Ouroboros, Void Raptor, Blueshift, and Serenity all now have service
       guard lockers.
-  Arceniu:
-  - rscadd: Returned gas masks
-  - bugfix: fixed a gas mask on blackmesa
-  - bugfix: fixed hev helmets
 2025-06-08:
+  Artemchik542:
+  - bugfix: "\u0442\u0435\u0441\u0442\u044B \u0434\u043B\u044F \u043A\u043E\u0434\u0430"
   Darkinite:
   - rscadd: Staff plushie master files and items into the game
+  DenIS318:
+  - server: Ouroboros map temporaly excluded from map vote
   Iajret:
   - bugfix: selecting robotic voicebox wont make binary as default language
   - bugfix: selecting tongues with inherent languages from augs+ wont give you said
@@ -108,10 +112,6 @@
       break room.
   vinylspiders:
   - bugfix: fixes guncase inhand icon states not showing up
-  Artemchik542:
-  - bugfix: "\u0442\u0435\u0441\u0442\u044B \u0434\u043B\u044F \u043A\u043E\u0434\u0430"
-  DenIS318:
-  - server: Ouroboros map temporaly excluded from map vote
 2025-06-09:
   Arceniu:
   - bugfix: armament tgui
@@ -125,6 +125,11 @@
   - qol: More details at map vote
   - bugfix: Fixed map vote that was random before
 2025-06-10:
+  DenIS318:
+  - config: 'Dynamic midround events threat or (and) min players lowered: Clown Operatives,
+      Alien Infestation, Spiders, Space Pirates, Dangerous Space Pirates, Revenant'
+  - server: Add Request Sound support
+  - balance: Enable Quirk balance
   dankmemerino147:
   - bugfix: Sol Defense Imports has uncovered and stopped an embezzlement scheme affecting
       the quality of its 'Muur' and 'Archangel' hardened armor systems. The product
@@ -132,11 +137,6 @@
   intense-skies:
   - rscadd: Some taur bodys can now loaf
   - image: Taur loafing sprites
-  DenIS318:
-  - config: 'Dynamic midround events threat or (and) min players lowered: Clown Operatives,
-      Alien Infestation, Spiders, Space Pirates, Dangerous Space Pirates, Revenant'
-  - server: Add Request Sound support
-  - balance: Enable Quirk balance
 2025-06-11:
   DenIS318:
   - config: Maintenance access for everyone
@@ -150,8 +150,19 @@
   - qol: Folders and biscuit cards now have screentips.
   - sound: Inserting paper into a folder now plays the pickup/drop sounds, consistent
       with taking it out.
+  Arceniu:
+  - rscadd: cargodise 1984
+  - rscadd: Edited oldstation
+  - config: added/enabled oldstation1984.dmm spawn, disabled oldstation1984.dmm spawn
   BigAganoo:
   - rscadd: Adds Skaag to your loadout. Plushmaxx today!
+  DenIS318:
+  - bugfix: Throw items in softcrit now works properly
+  - config: Min players for roundstart spies 10 -> 5
+  - rscdel: Remove Nova's swap servers from title screen
+  - image: nova logo replaced by ss1984 logo
+  - image: nova logo in-chat replaced by ratge
+  - image: Skyrat event title screen
   Ezel/Improvedname, Toriate, JohnFulpWillard:
   - rscadd: Re-added the Dragoon Tomb lair, now has a Skybulge spear and Drachen armor.
   - balance: Ice whelps now spit out cold fire.
@@ -214,17 +225,6 @@
   vinylspiders:
   - qol: adds lobby job estimations to statpanel, so you can see what jobs others
       are prioritizing
-  Arceniu:
-  - rscadd: cargodise 1984
-  - rscadd: Edited oldstation
-  - config: added/enabled oldstation1984.dmm spawn, disabled oldstation1984.dmm spawn
-  DenIS318:
-  - bugfix: Throw items in softcrit now works properly
-  - config: Min players for roundstart spies 10 -> 5
-  - rscdel: Remove Nova's swap servers from title screen
-  - image: nova logo replaced by ss1984 logo
-  - image: nova logo in-chat replaced by ratge
-  - image: Skyrat event title screen
 2025-06-13:
   Arceniu:
   - rscadd: Returned MCR
@@ -237,10 +237,6 @@
       lavaland, like hierophant arena and so on.
   - config: Space ruins budget 0 => 30. Now space ruins actually spawn!!!
 2025-06-14:
-  carpotoxin:
-  - bugfix: Fixes the interaction-chain of accessible storage (search panel won't
-      show up when opening someone's saddle-bags)
-  - qol: A screentip will show up when you can access someone's storage
   DenIS318:
   - rscadd: Preference for cortical borer to allow spawn as them in midround event
   - bugfix: Correct sub-roles display at radio
@@ -256,6 +252,10 @@
       Nova's disabled it
   - config: New config flag for Galactic Market sell
   - spellcheck: Translated codeworks and ion laws
+  carpotoxin:
+  - bugfix: Fixes the interaction-chain of accessible storage (search panel won't
+      show up when opening someone's saddle-bags)
+  - qol: A screentip will show up when you can access someone's storage
 2025-06-15:
   00-Steven:
   - bugfix: Placing an item on a table/turf via the alt-click menu actually centers
@@ -302,6 +302,11 @@
       merged Y: ..."'
   Absolucy, PowerfulBacon:
   - bugfix: Screentip icons work on the latest BYOND 516 again.
+  Arceniu:
+  - qol: changed cargodise outfit
+  - qol: slighly changed desc of military autodoc refill bottle
+  - bugfix: fixed a basic autodoc refill override in cargo
+  - code_imp: changed after effect for ert module
   ArrisFairburne:
   - qol: monkey cube boxes can now be inserted straight into the xenobiology console
   - qol: placing/sucking slimes/monkeys is slightly less text spammy
@@ -590,12 +595,9 @@
   - bugfix: stops stack merging from causing spurious CI runtimes
   - bugfix: accessories equipped on teshari will no longer run away from them over
       time
-  Arceniu:
-  - qol: changed cargodise outfit
-  - qol: slighly changed desc of military autodoc refill bottle
-  - bugfix: fixed a basic autodoc refill override in cargo
-  - code_imp: changed after effect for ert module
 2025-06-16:
+  Arceniu:
+  - bugfix: fixed HEV suits
   GoldenAlpharex:
   - config: The Whitelist system has been refactored to allow for SQL-based whitelisting.
       You should consider the Panic Bunker method that was currently implemented to
@@ -605,12 +607,13 @@
       see details in database_changelog.md.
   OrionTheFox:
   - balance: you can once again stick small guncases in large guncase backpacks
-  Arceniu:
-  - bugfix: fixed HEV suits
 2025-06-17:
   Absolucy:
   - bugfix: The lobby art properly fades out during roundstart, latejoin, and server
       restart again.
+  Arceniu:
+  - bugfix: fixed missing mcr in list
+  - code_imp: changed comm console
   Ghommie:
   - bugfix: Sundered blade ritual shouldn't delete more than one sheet of silver or
       titanium.
@@ -650,10 +653,9 @@
   plsleavemealon:
   - rscadd: Adds new morbid themed tools for the coroners enjoyment. Coroners now
       perform autopsies slightly faster.
-  Arceniu:
-  - bugfix: fixed missing mcr in list
-  - code_imp: changed comm console
 2025-06-18:
+  DenIS318:
+  - server: Aurora Caelsus event temporaly disabled from triggering automatically
   jjpark-kb:
   - rscadd: added plantable/growable trees-- find them by using sharp objects on already
       harvested lavaland flora. They also can be tapped with a screwdriver, will naturally
@@ -668,8 +670,6 @@
   - qol: adds an 'Enter Soulcatcher' button for the ghosts in addition to the verb.
       ghost tab is no more, TG removed it, you can still use the verbs in chat though
       as well as the buttons on the bottom of the screen.
-  DenIS318:
-  - server: Aurora Caelsus event temporaly disabled from triggering automatically
 2025-06-19:
   00-Steven:
   - rscadd: You can take pictures over advanced camera consoles.
@@ -681,6 +681,9 @@
   - bugfix: Taking pictures of glass floors in multi-z actually shows the floor below.
   Absolucy:
   - bugfix: Fixed lobby art not fading in when server hopping.
+  Arceniu:
+  - rscadd: Added modular DS-2 and some code
+  - bugfix: Fixed Tarkon deck hud / interdyne huds
   Hatterhat:
   - qol: Having throw mode enabled while racking the slide on a gun has you catch
       the ejected casing. Unless your hands are full, your hands are unprotected and
@@ -798,11 +801,12 @@
   - qol: '"Spawners Menu" and "Minigames Menu" are back as chat verbs for power users'
   - qol: report-issue is now a verb that can be used in chat to open the issue report
       prompt for power users
-  Arceniu:
-  - rscadd: Added modular DS-2 and some code
-  - bugfix: Fixed Tarkon deck hud / interdyne huds
 2025-06-20:
   Arceniu:
   - bugfix: fixed removed serviettes, fixed oldstation implant
   - map: Added modular interdyne
   - config: changed ip to 1984 version
+  RealWinterFrost:
+  - rscadd: Added new tarkon express console to tarkon industries
+  - map: Added new tarkon express console pad, sales pad, and budget card to their
+      base.
