@@ -156,3 +156,8 @@
   Arceniu:
   - rscadd: Added modular DS-2 and some code
   - bugfix: Fixed Tarkon deck hud / interdyne huds
+2025-06-20:
+  Arceniu:
+  - bugfix: fixed removed serviettes, fixed oldstation implant
+  - map: Added modular interdyne
+  - config: changed ip to 1984 version

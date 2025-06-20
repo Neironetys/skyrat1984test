@@ -1,6 +1,0 @@
-author: "Arceniu"
-delete-after: True
-changes:
-  - bugfix: "fixed removed serviettes, fixed oldstation implant"
-  - map: "Added modular interdyne"
-  - config: "changed ip to 1984 version"
