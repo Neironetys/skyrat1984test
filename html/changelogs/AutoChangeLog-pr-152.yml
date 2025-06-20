@@ -1,0 +1,4 @@
+author: "DenIS318"
+delete-after: True
+changes:
+  - admin: "Admins can properly cancel non-recallable shuttles now (no more need to disable/enable shuttle for that)"
