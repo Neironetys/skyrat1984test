@@ -810,3 +810,7 @@
   - rscadd: Added new tarkon express console to tarkon industries
   - map: Added new tarkon express console pad, sales pad, and budget card to their
       base.
+2025-06-21:
+  DenIS318:
+  - admin: Admins can properly cancel non-recallable shuttles now (no more need to
+      disable/enable shuttle for that)
