@@ -814,3 +814,4 @@
   DenIS318:
   - admin: Admins can properly cancel non-recallable shuttles now (no more need to
       disable/enable shuttle for that)
+  - bugfix: Temporal fix for resizeobserver error
