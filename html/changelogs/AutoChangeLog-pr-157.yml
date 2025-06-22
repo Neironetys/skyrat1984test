@@ -1,0 +1,4 @@
+author: "DenIS318"
+delete-after: True
+changes:
+  - qol: "Return UI buttons at top of screen that were removed by TG"
