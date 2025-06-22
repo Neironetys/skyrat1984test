@@ -1,5 +1,0 @@
-author: "Arceniu"
-delete-after: True
-changes:
-  - bugfix: "oldstation spawners now able to have custom character(human, felinid, synth), cryo icon fixed"
-  - rscadd: "added ACCESS_MINERAL_STOREROOM access to spare oldstation id"
