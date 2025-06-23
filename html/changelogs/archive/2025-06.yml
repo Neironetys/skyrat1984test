@@ -825,5 +825,7 @@
   DenIS318:
   - qol: Return UI buttons at top of screen that were removed by TG
 2025-06-23:
+  Arceniu:
+  - qol: pai and ai now able to move MOD suit
   DenIS318:
   - spellcheck: Localize most default telecomms messages (credits to Dexter0506)
