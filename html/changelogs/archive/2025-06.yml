@@ -824,3 +824,6 @@
   - rscadd: added ACCESS_MINERAL_STOREROOM access to spare oldstation id
   DenIS318:
   - qol: Return UI buttons at top of screen that were removed by TG
+2025-06-23:
+  DenIS318:
+  - spellcheck: Localize most default telecomms messages (credits to Dexter0506)
