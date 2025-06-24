@@ -1,0 +1,5 @@
+author: "Arceniu"
+delete-after: True
+changes:
+  - bugfix: "fixed a some ds 2 map code"
+  - map: "added syndicate comm console to DS-2(can send message to synd-admins)"
