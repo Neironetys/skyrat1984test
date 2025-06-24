@@ -829,3 +829,7 @@
   - qol: pai and ai now able to move MOD suit
   DenIS318:
   - spellcheck: Localize most default telecomms messages (credits to Dexter0506)
+2025-06-24:
+  Arceniu:
+  - bugfix: fixed a some ds 2 map code
+  - map: added syndicate comm console to DS-2(can send message to synd-admins)
