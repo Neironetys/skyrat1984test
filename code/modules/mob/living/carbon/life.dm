@@ -92,7 +92,6 @@
 	if(!get_organ_slot(ORGAN_SLOT_BREATHING_TUBE))
 		if(health <= HEALTH_THRESHOLD_FULLCRIT || (pulledby?.grab_state >= GRAB_KILL) || (lungs?.organ_flags & ORGAN_FAILING))
 			losebreath++  //You can't breath at all when in critical or when being choked, so you're going to miss a breath
-
 		else if(health <= crit_threshold)
 			losebreath += 1 //You're having trouble breathing in soft crit //SS1984 EDIT
 
