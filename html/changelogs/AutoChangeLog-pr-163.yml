@@ -1,5 +1,0 @@
-author: "DenIS318"
-delete-after: True
-changes:
-  - image: "Removed unused buttons: \"Report Issue\", \"Forum\" from top-right menu"
-  - image: "Rescaled buttons at top-right menu"

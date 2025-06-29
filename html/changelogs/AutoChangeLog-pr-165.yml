@@ -1,9 +1,0 @@
-author: "DenIS318"
-delete-after: True
-changes:
-  - bugfix: "Can interact with machinery/TGUI in softcrit"
-  - bugfix: "Can speak to headset/radio in softcrit"
-  - bugfix: "Mobs should now correct attack softcrit targets"
-  - bugfix: "Other found bugs fixed related to softcrit"
-  - qol: "Slutter speech during softcrit"
-  - balance: "Can receive stun in softcrit for 4 seconds with 3% chance"

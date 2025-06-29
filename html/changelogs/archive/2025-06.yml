@@ -836,3 +836,16 @@
 2025-06-27:
   Arceniu:
   - qol: accounts now able to have custom payday desc
+2025-06-29:
+  DenIS318:
+  - bugfix: Can interact with machinery/TGUI in softcrit
+  - bugfix: Can speak to headset/radio in softcrit
+  - bugfix: Mobs should now correct attack softcrit targets
+  - bugfix: Other found bugs fixed related to softcrit
+  - qol: Slutter speech during softcrit
+  - balance: Can receive stun in softcrit for 4 seconds with 3% chance
+  - image: 'Removed unused buttons: "Report Issue", "Forum" from top-right menu'
+  - image: Rescaled buttons at top-right menu
+  - bugfix: Progressive Dynamic non-station roles (such as ERT or ghost roles) no
+      more increases threat level
+  - spellcheck: Fixed mining order typo
