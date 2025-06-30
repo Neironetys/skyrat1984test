@@ -849,3 +849,6 @@
   - bugfix: Progressive Dynamic non-station roles (such as ERT or ghost roles) no
       more increases threat level
   - spellcheck: Fixed mining order typo
+2025-06-30:
+  DenIS318:
+  - bugfix: Mentors now can see LOOC
