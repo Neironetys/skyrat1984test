@@ -1,0 +1,5 @@
+author: "Arceniu"
+delete-after: True
+changes:
+  - bugfix: "fixed synd r_wall(now craftable), shuttle walls craftable(fixed spaceship plating)"
+  - image: "fixed synd r_wall(working texture after disasamble)"
