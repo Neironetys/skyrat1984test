@@ -1,0 +1,5 @@
+2025-07-02:
+  Arceniu:
+  - bugfix: fixed synd r_wall(now craftable), shuttle walls craftable(fixed spaceship
+      plating)
+  - image: fixed synd r_wall(working texture after disasamble)
