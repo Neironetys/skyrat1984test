@@ -1,4 +1,0 @@
-author: "DenIS318"
-delete-after: True
-changes:
-  - bugfix: "Now shuttles building shouldn't freeze server and throw runtime instead (could happen in some cases before)"

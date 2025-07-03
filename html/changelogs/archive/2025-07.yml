@@ -3,3 +3,7 @@
   - bugfix: fixed synd r_wall(now craftable), shuttle walls craftable(fixed spaceship
       plating)
   - image: fixed synd r_wall(working texture after disasamble)
+2025-07-03:
+  DenIS318:
+  - bugfix: Now shuttles building shouldn't freeze server and throw runtime instead
+      (could happen in some cases before)
