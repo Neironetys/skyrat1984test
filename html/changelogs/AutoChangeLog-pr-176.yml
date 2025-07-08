@@ -1,0 +1,4 @@
+author: "DenIS318"
+delete-after: True
+changes:
+  - rscadd: "Add Note button for IC tab, which lets you write some temporal info for round as \"memories\""
