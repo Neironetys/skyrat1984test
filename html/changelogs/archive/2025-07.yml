@@ -18,3 +18,6 @@
       ghost in centcomm now you properly see nttc from station)
   - bugfix: NTTC chameleon card now should properly work instead of "Unknown"
   - qol: NTTC now shows custom role (if exist) instead of default
+  - rscadd: Add Note button for IC tab, which lets you write some temporal info for
+      round as "memories"
+  - qol: Allow select same map at map-vote
