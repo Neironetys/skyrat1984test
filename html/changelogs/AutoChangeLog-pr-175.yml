@@ -1,0 +1,6 @@
+author: "DenIS318"
+delete-after: True
+changes:
+  - bugfix: "NTTC now works based on speaker zlevel instead of \"hearer\" zlevel (as ghost in centcomm now you properly see nttc from station)"
+  - bugfix: "NTTC chameleon card now should properly work instead of \"Unknown\""
+  - qol: "NTTC now shows custom role (if exist) instead of default"
