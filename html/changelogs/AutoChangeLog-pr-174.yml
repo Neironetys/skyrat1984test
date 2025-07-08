@@ -1,0 +1,5 @@
+author: "DenIS318"
+delete-after: True
+changes:
+  - config: "Dynamic increase rulesets scaling cost"
+  - config: "Dynamic increase rulesets threat consumed (mainly in roundstart)"
